@@ -1,6 +1,17 @@
 <template>
     <section class="albums">
-      <Album/>
+        <div class="container">
+            <Album/>
+            <Album/>
+            <Album/>
+            <Album/>
+            <Album/>
+            <Album/>
+            <Album/>
+            <Album/>
+            <Album/>
+            <Album/>
+        </div>
     </section>
 </template>
 
@@ -15,5 +26,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../assets/style/variables.scss';
+
+.albums {
+    background-color: $backgroundBlue;
+    height: calc(100vh - 4.375rem);
+    display: flex;
+    
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        width: 60%;
+        margin: auto;
+        max-width: 72.5rem;
+    }
+}
 
 </style>
