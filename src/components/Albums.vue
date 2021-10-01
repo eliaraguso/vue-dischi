@@ -1,26 +1,30 @@
 <template>
     <section class="albums">
         <div class="container">
-            <Album/>
-            <Album/>
-            <Album/>
-            <Album/>
-            <Album/>
-            <Album/>
-            <Album/>
-            <Album/>
-            <Album/>
-            <Album/>
+            <Album v-for="(album, index) in albums" :key="index"/>
         </div>
     </section>
 </template>
 
 <script>
+import axios from 'axios';
 import Album from './Album.vue';
+
 export default {
     name:"Albums",
     components : {
         Album
+    },
+    data() {
+        return {
+            albums: []
+        }
+    },
+    created() {
+        axios.get('https://flynn.boolean.careers/exercises/api/array/music')
+            .then( (response) => {
+                this.albums = response.data;
+            });
     }
 }
 </script>
