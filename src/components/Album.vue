@@ -9,7 +9,7 @@
 
 <script>
 export default {
-    name: "Component"
+    name: "Album"
 }
 </script>
 
