@@ -1,15 +1,16 @@
 <template>
   <div class="album">
-      <img src="https://cdn2.jazztimes.com/2018/05/SteveGadd-800x723.jpg" alt="">
-      <h2>NEW JERSEY</h2>
-      <p>Bon Jovi</p>
-      <p>1988</p>
+      <img :src="info.poster" alt="">
+      <h2>{{info.title}}</h2>
+      <p>{{info.author}}</p>
+      <p>{{info.year}}</p>
   </div>
 </template>
 
 <script>
 export default {
-    name: "Album"
+    name: "Album",
+    props: ['info']
 }
 </script>
 
