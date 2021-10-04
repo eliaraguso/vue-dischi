@@ -1,7 +1,7 @@
 <template>
     <header id="header">
         <img src="../assets/images/spotify-logo.png" alt="Spotify logo image">
-        <select name="" id="selezione-generi" v-model="selectGenre">
+        <select name="" id="selezione-generi" v-model="Genre" @change="$emit('selectGenres','Genre')">
             <option value="">Seleziona un genere</option>
             <option value="rock">Rock</option>
             <option value="pop">Pop</option>
@@ -16,7 +16,7 @@ export default {
     name: "Header",
     data() {
         return {
-            selectGenre: ""
+            Genre: ""
         }
     },
 }

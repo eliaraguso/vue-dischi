@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header/>
+    <Header @selectGenres="selectGenres"/>
     <Albums/>
   </div>
 </template>
@@ -15,6 +15,11 @@ export default {
   components: {
     Header,
     Albums
+  },
+  methods: {
+    selectGenres(selectedGenre) {
+      console.log(selectedGenre)
+    }
   }
 }
 </script>
