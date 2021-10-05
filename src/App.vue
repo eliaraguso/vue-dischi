@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header @selectGenres="selectGenres"/>
-    <Albums/>
+    <Albums :selectedGenre="selectedGenre"/>
   </div>
 </template>
 
@@ -16,9 +16,14 @@ export default {
     Header,
     Albums
   },
+  data() {
+    return {
+      selectedGenre: ""
+    }
+  },
   methods: {
     selectGenres(selectedGenre) {
-      console.log(selectedGenre)
+      this.selectedGenre = selectedGenre;
     }
   }
 }
